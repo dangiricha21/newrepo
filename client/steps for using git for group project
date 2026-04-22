@@ -1,0 +1,49 @@
+1. Create the Central Repository
+One person (the "Lead") should perform these steps first:
+
+Sign in to GitHub and click the + icon in the top right -> New repository.
+
+Name your project and keep it Public (or Private if you want to keep it under wraps until submission).
+
+Initialize it with a README.md and a .gitignore (choose the template for your language, like Python or Java). This prevents junk files from being uploaded.
+
+Add Collaborators: Go to Settings > Collaborators > Add people. Search for your teammates' usernames and invite them. They must accept the email invite to push code.
+
+2. Connect Your Local Code
+Once the repo is created, the Lead (or whoever has the initial code) should run these commands in their terminal/command prompt inside the project folder:
+
+Bash
+git init
+git add .
+git commit -m "Initial project setup"
+git branch -M main
+git remote add origin https://github.com/YourUsername/YourRepoName.git
+git push -u origin main
+3. The Team Workflow (The "Safe" Way)
+To avoid overwriting each other's work (merge conflicts), your team should follow this cycle:
+
+A. Clone the Repo
+Teammates should run this once to get the project on their machines:
+git clone https://github.com/YourUsername/YourRepoName.git
+
+B. Use Branches
+Never code directly on the main branch. Create a branch for your specific feature:
+git checkout -b my-new-feature
+
+C. Push and Merge
+Once you've written your segment:
+
+git add .
+
+git commit -m "Finished the login logic"
+
+git push origin my-new-feature
+
+Go to GitHub and click "Compare & pull request." This lets your team review the code before it joins the main project.
+
+Pro-Tips for College Projects
+Commits are receipts: If a teammate claims they worked 10 hours but has zero commits, GitHub's contribution graph will tell the truth.
+
+Pull before you Push: Always run git pull origin main before starting your work for the day to make sure you have the latest version of your teammates' code.
+
+README: Use the README.md to list who is responsible for which segment. It looks great to professors!
