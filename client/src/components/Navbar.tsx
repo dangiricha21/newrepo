@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/set-state-in-effect */
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useState } from 'react';
 import { assets } from '../assets/assets';
 import { Link, useNavigate } from 'react-router-dom';

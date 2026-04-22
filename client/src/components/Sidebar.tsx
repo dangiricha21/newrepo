@@ -2,7 +2,7 @@
 
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect, useState, useRef } from 'react'
+import  { useEffect, useState, useRef } from 'react'
 import type { Message, Project, Version } from '../types';
 import { BotIcon, EyeIcon, Loader2Icon, SendIcon, UserIcon } from 'lucide-react';
 import { Link } from 'react-router-dom'
@@ -61,7 +61,8 @@ const Sidebar = ({
 
   const handleRevisions = async (e: React.FormEvent) => {
     e.preventDefault();
-              let interval:number|undefined;
+              //let interval:number|undefined;
+              let interval: ReturnType<typeof setInterval> | undefined;
               try{
                 setIsGenerating(true);
                 interval=setInterval(() => {

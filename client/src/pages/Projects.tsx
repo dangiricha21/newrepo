@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import type { Project } from '../types'
 import Sidebar from '../components/Sidebar'
-import { ArrowBigDownDashIcon, CloudHail, EyeIcon, EyeOffIcon, FullscreenIcon, LaptopIcon, Loader2Icon, MessageSquareIcon, RocketIcon, SaveIcon, SmartphoneIcon, TabletIcon, XIcon } from 'lucide-react'
+import { ArrowBigDownDashIcon, FullscreenIcon, LaptopIcon, Loader2Icon, MessageSquareIcon, RocketIcon, SaveIcon, SmartphoneIcon, TabletIcon, XIcon } from 'lucide-react'
 //import { dummyConversations, dummyProjects, dummyVersion } from '../assets/assets'
 import ProjectPreview, { type ProjectPreviewRef } from '../components/ProjectPreview'
 import api from '@/configs/axios'
