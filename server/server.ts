@@ -11,14 +11,26 @@ import uploadRoutes from "./routes/uploadRoutes.js";
 import deployRoutes from "./routes/deploy.js";
 import { stripeWebhook } from "./controllers/stripeWebhook.js";
 const app = express();
-const port = 3000;
-const corsOptions = {
+//const port = 3000;
+const port = process.env.PORT || 3000;
+
+
+
+// const corsOptions = {
   
-    origin:process.env.TRUSTED_ORIGINS?.split(',') || [],
-    credentials: true
+//     origin:process.env.TRUSTED_ORIGINS?.split(',') || [],
+//     credentials: true
      
-};
-app.use(cors(corsOptions));
+// };
+// app.use(cors(corsOptions));
+
+app.use(cors({
+  origin: "https://newrepo-ten-wheat.vercel.app",
+  credentials: true
+}));
+
+
+
 app.post('/api/stripe',express.raw({type: 'application/json'}), stripeWebhook)
 
 
@@ -36,7 +48,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.all('/api/auth/{*any}', toNodeHandler(auth));
+app.all('/api/auth/*any', toNodeHandler(auth));
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Server is live with Neon!');
