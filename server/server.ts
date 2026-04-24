@@ -3,7 +3,8 @@ dotenv.config();
 import express, { Request, Response } from 'express';
 
 import cors from 'cors';
-import { toNodeHandler } from 'better-auth/dist/integrations/node.mjs';
+//import { toNodeHandler } from 'better-auth/dist/integrations/node.mjs';
+import { toNodeHandler } from 'better-auth/node';
 import { auth } from './lib/auth.js';
 import userRouter from './routes/userRoutes.js';
 import projectRouter from './routes/projectRouts.js';
