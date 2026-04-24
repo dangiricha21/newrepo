@@ -51,8 +51,8 @@ app.use((req, res, next) => {
   next();
 });
 
-//app.all('/api/auth/*any', toNodeHandler(auth));
-app.all('/api/auth/*', toNodeHandler(auth));
+app.all('/api/auth/*any', toNodeHandler(auth));
+
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Server is live with Neon!');
