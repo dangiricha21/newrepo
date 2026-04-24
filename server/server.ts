@@ -11,6 +11,8 @@ import projectRouter from './routes/projectRouts.js';
 import uploadRoutes from "./routes/uploadRoutes.js";
 import deployRoutes from "./routes/deploy.js";
 import { stripeWebhook } from "./controllers/stripeWebhook.js";
+
+console.log("🔥 SERVER FILE LOADED");
 const app = express();
 //const port = 3000;
 const port = process.env.PORT || 3000;
@@ -59,6 +61,7 @@ app.use('/api/user',userRouter);
 app.use('/api/project',projectRouter);
 app.use("/api", uploadRoutes);
 app.use("/api/deploy", deployRoutes);
+console.log("🚀 ABOUT TO LISTEN");
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
