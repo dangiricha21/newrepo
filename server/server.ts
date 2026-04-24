@@ -27,12 +27,23 @@ const port = process.env.PORT || 3000;
 // };
 // app.use(cors(corsOptions));
 
+// app.use(cors({
+//   origin: "https://newrepo-ten-wheat.vercel.app",
+//   credentials: true
+// }));
+
+
 app.use(cors({
   origin: "https://newrepo-ten-wheat.vercel.app",
-  credentials: true
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 
+app.options("*", cors());
+
+app.all('/api/auth/*any', toNodeHandler(auth));
 
 app.post('/api/stripe',express.raw({type: 'application/json'}), stripeWebhook)
 
@@ -51,7 +62,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.all('/api/auth/*any', toNodeHandler(auth));
+// app.all('/api/auth/*any', toNodeHandler(auth));
 
 
 app.get('/', (req: Request, res: Response) => {
