@@ -114,7 +114,7 @@ const port = process.env.PORT || 3000;
 /* ---------------- CORS ---------------- */
 app.use(
   cors({
-    origin: "https://newrepo-ten-wheat.vercel.app",
+    origin: "https://websitebuilder-l42j.onrender.com",
     credentials: true,
   })
 );
