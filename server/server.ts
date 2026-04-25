@@ -90,6 +90,7 @@
 
 
 import "dotenv/config";
+console.log("ENV CHECK:", process.env.DATABASE_URL);
 import express, { Request, Response } from "express";
 import cors from "cors";
 
