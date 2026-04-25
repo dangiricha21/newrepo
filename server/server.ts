@@ -95,7 +95,7 @@ import cors from "cors";
 
 // auth
 import { toNodeHandler } from "better-auth/node";
-import { auth } from "./lib/auth.js";
+///////////////////import { auth } from "./lib/auth.js";
 
 // routes
 import userRouter from "./routes/userRoutes.js";
@@ -137,7 +137,7 @@ app.use((req, res, next) => {
 });
 
 /* ---------------- AUTH ---------------- */
-app.all("/api/auth/*", toNodeHandler(auth));
+////////////////////app.all("/api/auth/*", toNodeHandler(auth));
 
 /* ---------------- ROUTES ---------------- */
 app.get("/", (req: Request, res: Response) => {
