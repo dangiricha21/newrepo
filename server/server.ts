@@ -112,12 +112,20 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 /* ---------------- CORS ---------------- */
-app.use(
-  cors({
-    origin: "https://newrepo-ten-wheat.vercel.app",
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://newrepo-ten-wheat.vercel.app",
+//     credentials: true,
+//   })
+// );
+
+app.use(cors({
+  origin: [
+    "https://newrepo-ten-wheat.vercel.app",
+    "http://localhost:5173"
+  ],
+  credentials: true
+}));
 
 /* ---------------- STRIPE WEBHOOK (IMPORTANT: before json) ---------------- */
 app.post(
@@ -137,7 +145,7 @@ app.use((req, res, next) => {
 });
 
 /* ---------------- AUTH ---------------- */
-app.all("/api/auth/*", toNodeHandler(auth));
+app.all("/api/auth/*any", toNodeHandler(auth));
 
 /* ---------------- ROUTES ---------------- */
 app.get("/", (req: Request, res: Response) => {
